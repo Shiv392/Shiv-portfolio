@@ -1,50 +1,76 @@
-import React from 'react';
-import { useState,useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import {styles} from '../style.js';
-import {navLinks} from '../contstants';
-import { logo,menu,close} from '../assets/index.js';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
+import { styles } from "../style";
+import { navLinks } from "../contstants";
+import { logo, menu, close } from "../assets";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      if (scrollTop > 100) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className={`${styles.paddingX} w-full flex items-center py-5 fixed z-20 top-0 bg-primary `}>
-    <div className='w-full flex items-center justify-between max-w-7xl max-autos'>
-     <Link to='/' className='w-full flex items-center gap-2' onClick={()=>{
-      setActive("");
-      window.scrollTo(0,0);
-     }}>
-      <img src={logo} alt='logo' className='w-9 h-9 object-contain ' />
-      <p className='text-white text-[18px] font-bold cursor-pointer flex '>
-            Shiv Soni &nbsp;
-            <span className='sm:block hidden'> | Full-stack Software Engineer</span>
-          </p>
-     </Link>
-     <ul className='list-none hidden sm:flex flex-row gap-10'>
-    {
-      navLinks.map((items)=>(
-        <li
-        key={items.id}
-        className={`${active===items.title ? "text-white" : "text-secondary"} hover:text-white text-[18px] font-medium cursor-pointer`}
-        onClick={()=>setActive(items.title)}
+    <nav
+      className={`${
+        styles.paddingX
+      } w-full flex items-center py-5 fixed top-0 z-20 ${
+        scrolled ? "bg-primary" : "bg-transparent"
+      }`}
+    >
+      <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
+        <Link
+          to='/'
+          className='flex items-center gap-2'
+          onClick={() => {
+            setActive("");
+            window.scrollTo(0, 0);
+          }}
         >
-          <a href={`${items.id}`}>{items.title}</a>
-        </li>
-      ))
-    }
-     </ul>
+          <img src={logo} alt='logo' className='w-9 h-9 object-contain' />
+          <p className='text-white text-[18px] font-bold cursor-pointer flex '>
+            Adrian &nbsp;
+            <span className='sm:block hidden'> | JavaScript Mastery</span>
+          </p>
+        </Link>
 
-     <div className='sm:hidden flex flex-1 justify-end items-center'>
+        <ul className='list-none hidden sm:flex flex-row gap-10'>
+          {navLinks.map((nav) => (
+            <li
+              key={nav.id}
+              className={`${
+                active === nav.title ? "text-white" : "text-secondary"
+              } hover:text-white text-[18px] font-medium cursor-pointer`}
+              onClick={() => setActive(nav.title)}
+            >
+              <a href={`#${nav.id}`}>{nav.title}</a>
+            </li>
+          ))}
+        </ul>
+
+        <div className='sm:hidden flex flex-1 justify-end items-center'>
           <img
             src={toggle ? close : menu}
             alt='menu'
-            className='w-[28px] h-[28px]'
+            className='w-[28px] h-[28px] object-contain'
             onClick={() => setToggle(!toggle)}
           />
+
           <div
             className={`${
               !toggle ? "hidden" : "flex"
@@ -68,9 +94,9 @@ const Navbar = () => {
             </ul>
           </div>
         </div>
-    </div>
+      </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
