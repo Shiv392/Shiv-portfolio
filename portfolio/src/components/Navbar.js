@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
 import { styles } from "../style";
 import { navLinks } from "../contstants";
 import { logo, menu, close } from "../assets";
+import {IconMenu2,IconX} from '@tabler/icons-react';
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -44,8 +44,8 @@ const Navbar = () => {
         >
           <img src={logo} alt='logo' className='w-9 h-9 object-contain' />
           <p className='text-white text-[18px] font-bold cursor-pointer flex '>
-            Adrian &nbsp;
-            <span className='sm:block hidden'> | JavaScript Mastery</span>
+            Shiv Soni &nbsp;
+            <span className='sm:block hidden'> | Software Development Engineer</span>
           </p>
         </Link>
 
@@ -64,13 +64,11 @@ const Navbar = () => {
         </ul>
 
         <div className='sm:hidden flex flex-1 justify-end items-center'>
-          <img
-            src={toggle ? close : menu}
-            alt='menu'
-            className='w-[28px] h-[28px] object-contain'
-            onClick={() => setToggle(!toggle)}
-          />
-
+          {
+            toggle ? <IconX  className="cursor-pointer" onClick={()=> setToggle(!toggle)} size={25} /> :
+             <IconMenu2 className="cursor-pointer" onClick={()=> setToggle(!toggle)} size={25} />
+          }
+          
           <div
             className={`${
               !toggle ? "hidden" : "flex"
