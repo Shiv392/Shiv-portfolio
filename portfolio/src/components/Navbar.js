@@ -4,11 +4,21 @@ import { styles } from "../style";
 import { navLinks } from "../contstants";
 import { logo, menu, close } from "../assets";
 import {IconMenu2,IconX} from '@tabler/icons-react';
-
+import { motion, useScroll, useSpring } from 'framer-motion';
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+      // 1. Use the useScroll hook to track scroll progress
+  const { scrollYProgress } = useScroll();
+
+      // 2. Use useSpring for smooth animation
+  const scaleX = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001,
+      });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +36,7 @@ const Navbar = () => {
   }, []);
 
   return (
+    <>
     <nav
       className={`${
         styles.paddingX
@@ -94,6 +105,11 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
+         <motion.div
+         className='fixed top-0 left-0 right-0 h-1 bg-red-500 origin-left z-50'
+         style={{ scaleX }} // Connect the progress bar to scroll progress
+       />
+    </>
   );
 };
 
