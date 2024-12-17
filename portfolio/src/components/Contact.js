@@ -5,8 +5,11 @@ import { styles } from "../style";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
+import ThankyouPage from "./ThankyouPage";
 
 const Contact = () => {
+  const [opendialog,setDialog]=useState(false);
+
   const formRef = useRef();
   const [form, setForm] = useState({
     name: "",
@@ -29,7 +32,6 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-
     emailjs
       .send(
         'service_4s9tmna',
@@ -46,22 +48,24 @@ const Contact = () => {
       .then(
         () => {
           setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
-
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
-
-          alert("Ahh, something went wrong. Please try again.");
+          setDialog(true);
         }
-      );
+      ).catch(err=>{
+        setLoading(false);
+        console.error(err);
+        alert("Ahh, something went wrong. Please try again.");
+      })
   };
+
+  const ThankyoupageClose=(event)=>{
+    console.log('event--------->',event);
+    setDialog(false);
+    setForm({
+      name: "",
+      email: "",
+      message: "",
+    });
+  }
 
   return (
     <div
@@ -72,7 +76,7 @@ const Contact = () => {
         className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
       >
         <p className={styles.sectionSubText}>Get in touch</p>
-        <h3 className={styles.sectionHeadText}>Contact.</h3>
+        <h3 className={styles.sectionHeadText}>Contact</h3>
 
         <form
           ref={formRef}
@@ -128,8 +132,20 @@ const Contact = () => {
       >
         <EarthCanvas />
       </motion.div>
+
+      
+     <ThankyouPage 
+     isOpen={opendialog}
+     name={form.name}
+     onClose={ThankyoupageClose}
+     />
     </div>
+
+    
   );
 };
+
+
+
 
 export default SectionWrapper(Contact, "contact");
