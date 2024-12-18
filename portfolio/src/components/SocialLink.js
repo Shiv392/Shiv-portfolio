@@ -2,9 +2,20 @@ import React from 'react';
 import '../styles/SocialLink.css';
 import {socialLinks} from '../contstants/index.js';
 import Tooltip from '@mui/material/Tooltip';
+import { motion } from 'framer-motion';
+import { slideIn } from '../utils/motion.js';
 
 const FloatingSocialLinks = () => {
   return (
+   <motion.div
+   layoutRoot
+   initial={{ opacity:0,position:"fixed"}}
+   animate={{  opacity:1}}
+   exit={{ opacity: 0 }}
+   transition={{
+       duration: 2,
+   }} 
+   >
     <div  className="fixed social-icons right-0 top-1/2 transform -translate-y-1/2 flex flex-col space-y-4 p-2 bg-tertiary rounded-l-lg shadow-lg">
       {
         socialLinks.map((item,index)=>(
@@ -16,6 +27,7 @@ const FloatingSocialLinks = () => {
         ))
     }
     </div>
+   </motion.div>
   );
 };
 
