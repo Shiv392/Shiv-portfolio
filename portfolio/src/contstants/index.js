@@ -11,6 +11,7 @@ import {
   redux,
   tailwind,
   nodejs,
+  mysql,
   mongodb,
   git,
   figma,
@@ -42,11 +43,11 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Web Developer",
+    title: "Software Engineer",
     icon: web,
   },
   {
-    title: "React Native Developer",
+    title: "Frontend Developer",
     icon: mobile,
   },
   {
@@ -54,7 +55,7 @@ const services = [
     icon: backend,
   },
   {
-    title: "Content Creator",
+    title: "Web Application Developer",
     icon: creator,
   },
 ];
@@ -93,13 +94,17 @@ const technologies = [
     icon: nodejs,
   },
   {
+    name : 'MYSQL',
+    icon : mysql
+  },
+  {
     name: "MongoDB",
     icon: mongodb,
   },
-  {
-    name: "Three JS",
-    icon: threejs,
-  },
+  // {
+  //   name: "Three JS",
+  //   icon: threejs,
+  // },
   {
     name: "git",
     icon: git,

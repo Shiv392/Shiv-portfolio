@@ -20,6 +20,7 @@ import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
+import mysql from './tech/mysql.png';
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
@@ -60,5 +61,6 @@ export {
   carrent,
   jobit,
   tripguide,
-  thankyoupage
+  thankyoupage,
+  mysql
 };
