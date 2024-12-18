@@ -24,7 +24,9 @@ import {
   jobit,
   tripguide,
   threejs,
+  github,
 } from "../assets";
+import { linkedln,leetcode } from "../assets/sociallink";
 
 export const navLinks = [
   {
@@ -267,4 +269,22 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+const socialLinks=[
+  {
+   icon : linkedln,
+   link : 'https://www.linkedin.com/in/shiv3923/',
+   title:'Linkedln'
+  },
+  {
+    icon:github,
+    link:'https://github.com/Shiv392',
+    title:'GitHub'
+  },
+  {
+    icon:leetcode,
+    link:'https://leetcode.com/u/Shiv3923/',
+    title:'Leetcode'
+  }
+]
+
+export { services, technologies, experiences, testimonials, projects, socialLinks };

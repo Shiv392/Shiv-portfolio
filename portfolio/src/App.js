@@ -9,6 +9,7 @@ import Loader from './components/Loader';
 import Works from './components/Works';
 import Tech from './components/Tech';
 import { StarsCanvas } from './components';
+import FloatingSocialLinks from './components/SocialLink';
 
 const  App=()=> {
   return (
@@ -17,6 +18,7 @@ const  App=()=> {
      <div className='bg-hero-pattern bg-cover bg-repeat bg-center'>
      <Navbar />
      <Hero />
+     <FloatingSocialLinks />
      </div>
      <About />
      <Experience />
