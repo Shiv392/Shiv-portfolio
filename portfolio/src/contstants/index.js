@@ -27,6 +27,8 @@ import {
   github,
 } from "../assets";
 import { linkedln,leetcode } from "../assets/sociallink";
+import {deepak,harsh,jiwan} from '../assets/testimonials';
+import {interbiz,leadangel } from '../assets/company/index.js'
 
 export const navLinks = [
   {
@@ -45,7 +47,7 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Software Engineer",
+    title: "Software Developer",
     icon: web,
   },
   {
@@ -123,11 +125,11 @@ const technologies = [
 
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
+    title: "Full Stack Software Developer",
+    company_name: "LeadAngel ",
+    icon: leadangel,
     iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    date: "July 2023 - Now",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -136,70 +138,47 @@ const experiences = [
     ],
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
+    title: "Software Development Intern",
+    company_name: "Interbiz Software Consulting",
+    icon: interbiz,
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    date: "Jun 2022 - Dec 2022",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
       "Implementing responsive design and ensuring cross-browser compatibility.",
       "Participating in code reviews and providing constructive feedback to other developers.",
     ],
-  },
-  {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
-    iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
-    iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
+  }
 ];
 
 const testimonials = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+      "He is just amazing as he created SaaS application for Lead routing and management by using limited resource with top level security features ",
+    name: "Deepak Kumar",
+    designation: "CEO",
+    company: "LeadAngel",
+    image: deepak,
+    linkedlnlink:'https://www.linkedin.com/in/hellodeepak/'
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
+      "I've never met a web developer who truly cares about their client needs and their future perspective success like Shiv does.",
+    name: "Jiwan Kumar",
+    designation: "Product Manager",
+    company: "LeadAngel",
+    image: jiwan,
+    linkedlnlink: 'https://www.linkedin.com/in/jiwan-nishad-a5ab6385/'
   },
   {
     testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
+      "I thought it was impossible to make a web application as beautiful as our product, but Shiv proved me wrong.",
+    name: "Harsh Janghel",
+    designation: "UI/UX Lead",
+    company: "LeadAngel",
+    image: harsh,
+    linkedlnlink:'https://www.linkedin.com/in/harsh-janghel-8b39732a4/'
   },
 ];
 

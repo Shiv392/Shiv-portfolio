@@ -106,7 +106,7 @@ const Navbar = () => {
       </div>
     </nav>
          <motion.div
-         className='fixed top-0 left-0 right-0 h-1 bg-red-500 origin-left z-50'
+         className='fixed top-0 left-0 right-0 h-1 bg-white origin-left z-50'
          style={{ scaleX }} // Connect the progress bar to scroll progress
        />
     </>
