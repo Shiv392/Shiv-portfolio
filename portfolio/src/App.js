@@ -10,6 +10,7 @@ import Works from './components/Works';
 import Tech from './components/Tech';
 import { StarsCanvas } from './components';
 import FloatingSocialLinks from './components/SocialLink';
+import ScrollToTopButton from './components/ScrollToTopButton';
 
 const  App=()=> {
   return (
@@ -28,6 +29,7 @@ const  App=()=> {
      <div className='relative z-0'>
      <Contact />
      <StarsCanvas />
+     <ScrollToTopButton />
      </div>
     </div>
     </BrowserRouter>

@@ -26,9 +26,10 @@ import {
   threejs,
   github,
 } from "../assets";
-import { linkedln,leetcode } from "../assets/sociallink";
+import { linkedln,leetcode,resume2,resume } from "../assets/sociallink";
 import {deepak,harsh,jiwan} from '../assets/testimonials';
-import {interbiz,leadangel } from '../assets/company/index.js'
+import {interbiz,leadangel } from '../assets/company/index.js';
+
 
 export const navLinks = [
   {
@@ -252,17 +253,26 @@ const socialLinks=[
   {
    icon : linkedln,
    link : 'https://www.linkedin.com/in/shiv3923/',
-   title:'Linkedln'
+   title:'Linkedln',
+   isDownload : false
   },
   {
     icon:github,
     link:'https://github.com/Shiv392',
-    title:'GitHub'
+    title:'GitHub',
+    isDownload : false
   },
   {
     icon:leetcode,
     link:'https://leetcode.com/u/Shiv3923/',
-    title:'Leetcode'
+    title:'Leetcode',
+    isDownload : false
+  },
+  {
+    icon:resume,
+    link:'https://www.google.com',
+    title:'Resume',
+    isDownload : true
   }
 ]
 

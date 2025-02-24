@@ -3,7 +3,6 @@ import '../styles/SocialLink.css';
 import {socialLinks} from '../contstants/index.js';
 import Tooltip from '@mui/material/Tooltip';
 import { motion } from 'framer-motion';
-import { slideIn } from '../utils/motion.js';
 
 const FloatingSocialLinks = () => {
   return (
@@ -20,9 +19,14 @@ const FloatingSocialLinks = () => {
       {
         socialLinks.map((item,index)=>(
         <Tooltip title={item.title} placement='left-start'>
-        <a href={item.link} target="_blank" key={index} rel="noopener noreferrer">
-        <img alt='link-img' src={item.icon} />
-        </a>
+          {
+            item.isDownload ? <a href='/resume/ShivSoni_SoftwareDev_Resume.pdf' target="_blank" download="ShivSoni_SoftwareDev_Resume.pdf" key={index} rel="noopener noreferrer">
+            <img alt='link-img' src={item.icon} />
+            </a>  : 
+            <a href={item.link} target="_blank" key={index} rel="noopener noreferrer">
+            <img alt='link-img' src={item.icon} />
+            </a>
+          }
         </Tooltip>
         ))
     }
