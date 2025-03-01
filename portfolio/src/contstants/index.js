@@ -136,7 +136,7 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Full Stack Software Developer",
+    title: "Software Developer",
     company_name: "LeadAngel ",
     icon: leadangel,
     iconBg: "#383E56",
@@ -147,9 +147,10 @@ const experiences = [
       "Implementing responsive design and ensuring cross-browser compatibility.",
       "Participating in code reviews and providing constructive feedback to other developers.",
     ],
+    link : 'https://www.leadangel.com'
   },
   {
-    title: "Software Development Intern",
+    title: "Software Intern",
     company_name: "Interbiz Software Consulting",
     icon: interbiz,
     iconBg: "#E6DEDD",
@@ -160,6 +161,7 @@ const experiences = [
       "Implementing responsive design and ensuring cross-browser compatibility.",
       "Participating in code reviews and providing constructive feedback to other developers.",
     ],
+    link : "https://interbizconsulting.com"
   }
 ];
 
