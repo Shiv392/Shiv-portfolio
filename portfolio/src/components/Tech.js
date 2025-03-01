@@ -18,13 +18,11 @@ const Tech = () => {
        {technologies.map((technology) => (
         <div className="w-28 h-28" key={technology.name}>
           {loading ? (
-            // Skeleton Loader
-            // <div className="w-full h-full rounded-full bg-gray-300 animate-pulse" />
             <Stack>
             <Skeleton variant="circular" sx={{ bgcolor: 'grey' }} className="w-full h-full rounded-full bg-gray-300 animate-pulse" width={100} height={100} />
             </Stack>
           ) : (
-            <BallCanvas icon={technology.icon} />
+            <BallCanvas icon={technology.icon} skill={technology}/>
           )}
         </div>
       ))}

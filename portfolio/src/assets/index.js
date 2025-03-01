@@ -31,6 +31,10 @@ import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 import thankyoupage from './Thankyoupage.jpg';
+import linux from './tech/linux.png';
+import LeadAngel from './LeadAngel.png';
+import LeadAngelCalendar from './LeadAngel-Calendar.png';
+import ExpanseTracker from './ExpanseTracker.jpg';
 
 export {
   logo,
@@ -44,6 +48,7 @@ export {
   css,
   docker,
   figma,
+  linux,
   git,
   html,
   javascript,
@@ -59,8 +64,11 @@ export {
   starbucks,
   tesla,
   carrent,
+  LeadAngel,
+  LeadAngelCalendar,
   jobit,
   tripguide,
   thankyoupage,
-  mysql
+  mysql,
+  ExpanseTracker
 };
