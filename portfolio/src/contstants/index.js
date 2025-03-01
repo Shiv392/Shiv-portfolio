@@ -26,6 +26,9 @@ import {
   tripguide,
   threejs,
   github,
+  LeadAngel,
+  LeadAngelCalendar,
+  ExpanseTracker
 } from "../assets";
 import { linkedln,leetcode,resume2,resume } from "../assets/sociallink";
 import {deepak,harsh,jiwan} from '../assets/testimonials';
@@ -197,67 +200,70 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "LeadAngel",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "Web-based SaaS application integrated with popular CRM applications inlcuding SalesForece, Hubspot, Dynamics, for lead routing and lead management.",
     tags: [
       {
-        name: "react",
+        name: "Angular",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "Node.JS",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "MYSQL",
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    image: LeadAngel,
+    source_code_link: "https://www.leadangel.com",
+    isLive : true
   },
   {
-    name: "Job IT",
+    name: "LeadAngel Calendar",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "LeadAngel calendar is a SaaS application helps clients to schedule, book, reschedule events with their respectives sales person for B2B business events.",
     tags: [
       {
-        name: "react",
+        name: "React.JS",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "Tailwind CSS",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "Material UI",
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: LeadAngelCalendar,
+    source_code_link: "https://www.leadangel.com",
+    isLive : true
   },
   {
-    name: "Trip Guide",
+    name: "Expanse Tracker",
     description:
       "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
     tags: [
       {
-        name: "nextjs",
+        name: "React.JS",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "MYSQL",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "Tailwind CSS",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: ExpanseTracker,
+    source_code_link: "https://github.com/Shiv392/full_stack_expanse_tracker_with-jwt_auth",
+    isLive : false
   },
 ];
 
