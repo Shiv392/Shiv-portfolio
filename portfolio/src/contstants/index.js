@@ -15,6 +15,7 @@ import {
   mongodb,
   git,
   figma,
+  linux,
   docker,
   meta,
   starbucks,
@@ -69,58 +70,67 @@ const technologies = [
   {
     name: "HTML 5",
     icon: html,
+    experiences : `2 years`
   },
   {
     name: "CSS 3",
     icon: css,
+    experiences : `2 years`
   },
   {
     name: "JavaScript",
     icon: javascript,
+    experiences : `2 years`
   },
   {
     name: "TypeScript",
     icon: typescript,
+    experiences : `2 years`
   },
   {
     name: "React JS",
     icon: reactjs,
+    experiences : `2 years`
   },
   {
     name: "Redux Toolkit",
     icon: redux,
+    experiences : `2 years`
   },
   {
     name: "Tailwind CSS",
     icon: tailwind,
+    experiences : `2 years`
   },
   {
     name: "Node JS",
     icon: nodejs,
+    experiences : `2 years`
   },
   {
     name : 'MYSQL',
-    icon : mysql
+    icon : mysql,
+    experiences : `2 years`
   },
   {
     name: "MongoDB",
     icon: mongodb,
+    experiences : `2 years`
   },
-  // {
-  //   name: "Three JS",
-  //   icon: threejs,
-  // },
   {
     name: "git",
     icon: git,
+    experiences : `2 years`
   },
   {
-    name: "figma",
-    icon: figma,
+    name: "Linux",
+    icon: linux,
+    experiences : `2 years`
   },
   {
     name: "docker",
     icon: docker,
+    experiences : `2 years`
   },
 ];
 

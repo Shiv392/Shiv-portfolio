@@ -31,6 +31,7 @@ import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 import thankyoupage from './Thankyoupage.jpg';
+import linux from './tech/linux.png'
 
 export {
   logo,
@@ -44,6 +45,7 @@ export {
   css,
   docker,
   figma,
+  linux,
   git,
   html,
   javascript,
