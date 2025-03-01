@@ -8,6 +8,8 @@ import { slideIn } from "../utils/motion";
 import ThankyouPage from "./ThankyouPage";
 import {Field, Form, Formik,ErrorMessage} from 'formik';
 import * as yup from 'yup';
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const ContactFormValidationSchema=yup.object().shape({
   name : yup.string().required('Name is Required').min(2,'Enter a Valid Name').max(30,'Name must be atmost 30 characters long'),
@@ -18,8 +20,16 @@ const Contact = () => {
   const [opendialog,setDialog]=useState(false);
   const [loading, setLoading] = useState(false);
 
+  const [open, setOpen] = React.useState(false);
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
   const handleSubmit = (values) => {
-    setLoading(true);
+    handleOpen();
     emailjs
       .send(
         'service_4s9tmna',
@@ -35,11 +45,11 @@ const Contact = () => {
       )
       .then(
         () => {
-          setLoading(false);
+          handleClose();
           setDialog(true);
         }
       ).catch(err=>{
-        setLoading(false);
+        handleClose();
         console.error(err);
         alert("Ahh, something went wrong. Please try again.");
       })
@@ -147,6 +157,14 @@ const Contact = () => {
      name={'shivsoni'}
      onClose={ThankyoupageClose}
      />
+
+     <Backdrop
+        sx={(theme) => ({ color: '#fff', zIndex: theme.zIndex.drawer + 1 })}
+        open={open}
+        onClick={handleClose}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </div>
 
     
