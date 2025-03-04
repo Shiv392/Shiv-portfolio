@@ -1,38 +1,63 @@
 import { motion } from "framer-motion";
 import { styles } from "../style";
 import { ComputersCanvas } from "./canvas";
+import { Typewriter } from "react-simple-typewriter";
 import { slideIn } from "../utils/motion";
+import { useState,useEffect } from 'react';
 
 const Hero = () => {
+  const [showShiv, setShowShiv] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowShiv(true);
+    }, 2500); // Delay for "Shiv" to start after 1s
+  }, []);
+
   return (
     <section className={`relative w-full h-screen mx-auto`}>
       <motion.div
-       layoutRoot
-       initial={{ opacity:0}}
-       animate={{  opacity:1}}
-       exit={{ opacity: 0 }}
-       transition={{
-       duration: 2,
-       }} 
+        layoutRoot
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 2 }}
       >
-      <div
-        className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
-      >
-        <div className='flex flex-col justify-center items-center mt-5'>
-          <div className='w-5 h-5 rounded-full bg-[#915EFF]' />
-          <div className='w-1 sm:h-80 h-40 violet-gradient' />
-        </div>
+        <div
+          className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
+        >
+          <div className="flex flex-col justify-center items-center mt-5">
+            <div className="w-5 h-5 rounded-full bg-[#915EFF]" />
+            <div className="w-1 sm:h-80 h-40 violet-gradient" />
+          </div>
 
-        <div>
-          <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className='text-[#915EFF]'>Shiv</span>
-          </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-           <span className="text-[#915EFF]">Software Engineer</span> : they turn coffee into  <br className='sm:block hidden' />
-            Buildings
-          </p>
+          <div>
+            <h1 className={`${styles.heroHeadText} text-white`}>
+              <Typewriter 
+              words={["Hi, I'm"]} 
+              loop={1} 
+              cursor={false} 
+              typeSpeed={150} 
+              />
+              &nbsp;
+              {showShiv && (
+                <span className="text-[#915EFF]">
+                  <Typewriter
+                    words={["Shiv"]}
+                    loop={1}
+                    cursor={false}
+                    cursorStyle="_"
+                    typeSpeed={150}
+                  />
+                </span>
+              )}
+            </h1>
+            <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+              <span className="text-[#915EFF]">Software Engineer</span>: they turn coffee into <br className="sm:block hidden" />
+              Buildings
+            </p>
+          </div>
         </div>
-      </div>
       </motion.div>
 
       <ComputersCanvas />
