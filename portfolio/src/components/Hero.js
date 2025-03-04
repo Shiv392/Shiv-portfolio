@@ -43,7 +43,7 @@ const Hero = () => {
               {showShiv && (
                 <span className="text-[#915EFF]">
                   <Typewriter
-                    words={["Shiv"]}
+                    words={["Shiv Soni"]}
                     loop={1}
                     cursor={false}
                     cursorStyle="_"
