@@ -11,10 +11,12 @@ import Tech from './components/Tech';
 import { StarsCanvas } from './components';
 import FloatingSocialLinks from './components/SocialLink';
 import ScrollToTopButton from './components/ScrollToTopButton';
+import {NavProvider} from './context/NavBarContext';
 
 const  App=()=> {
   return (
     <BrowserRouter>
+    <NavProvider>
     <div className='relative bg-primary z-0'>
      <div className='bg-hero-pattern bg-cover bg-repeat bg-center'>
      <Navbar />
@@ -32,6 +34,7 @@ const  App=()=> {
      <ScrollToTopButton />
      </div>
     </div>
+    </NavProvider>
     </BrowserRouter>
   );
 }
