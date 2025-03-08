@@ -18,7 +18,7 @@ const FloatingSocialLinks = () => {
     <div  className="fixed social-icons right-0 top-1/2 transform -translate-y-1/2 flex flex-col space-y-4 p-2 bg-tertiary rounded-l-lg shadow-lg">
       {
         socialLinks.map((item,index)=>(
-        <Tooltip title={item.title} placement='left-start'>
+        <Tooltip key={index} title={item.title} placement='left-start'>
           {
             item.isDownload ? <a href='/resume/ShivSoni_SoftwareDev_Resume.pdf' target="_blank" download="ShivSoni_SoftwareDev_Resume.pdf" key={index} rel="noopener noreferrer">
             <img alt='link-img' src={item.icon} />

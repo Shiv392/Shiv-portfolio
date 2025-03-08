@@ -21,6 +21,18 @@ const Navbar = () => {
       });
 
   useEffect(() => {
+     // Check for hash in URL on page load
+     const hash = window.location.hash;
+     console.log('hash vlaue---------->',hash);
+     if (hash) {
+       const sectionId = hash.substring(1); // Remove the '#' symbol
+       const section = document.getElementById(sectionId);
+       if (section) {
+         section.scrollIntoView({ behavior: "smooth" });
+         const activeValue=navLinks.find(ele=> ele.id==sectionId); //find the active node 
+         setActive(activeValue.title);
+       }
+     }
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       if (scrollTop > 100) {
@@ -31,7 +43,7 @@ const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-
+    
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
