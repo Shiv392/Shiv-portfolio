@@ -53,8 +53,8 @@ const Hero = () => {
               )}
             </h1>
             <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-              <span className="text-[#915EFF]">Software Engineer</span>: they turn coffee into <br className="sm:block hidden" />
-              Buildings
+              <span className="text-[#915EFF]">Software Engineer</span> : Turning Coffee into clean <br className="sm:block hidden" />
+              architecture
             </p>
           </div>
         </div>
