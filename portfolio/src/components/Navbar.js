@@ -60,18 +60,19 @@ const Navbar = () => {
 
           <ul className='list-none hidden sm:flex flex-row gap-10'>
             {navLinks.map((nav) => (
-              <li
-                key={nav.id}
-                className={`relative ${active === nav.title ? "text-white" : "text-secondary"
-                  } hover:text-white text-[18px] font-medium cursor-pointer 
-                  before:absolute before:bottom-[-5px] before:left-0 before:w-full 
-                  before:h-[2px] before:bg-white before:scale-x-0 
-                  before:origin-left before:transition-transform before:duration-300 
-                  hover:before:scale-x-100`}
-                onClick={() => setActive(nav.title)}
-              >
-                <a href={`#${nav.id}`}>{nav.title}</a>
-              </li>
+            <li
+            key={nav.id}
+            className={`relative ${
+              active === nav.title ? "text-white before:scale-x-100" : "text-secondary before:scale-x-0"
+            } hover:text-white text-[18px] font-medium cursor-pointer 
+            before:absolute before:bottom-[-5px] before:left-0 before:w-full 
+            before:h-[2px] before:bg-white  
+            before:origin-left before:transition-transform before:duration-300 
+            hover:before:scale-x-100`}
+            onClick={() => setActive(nav.title)}
+          >
+            <a href={`#${nav.id}`}>{nav.title}</a>
+          </li>
             ))}
           </ul>
 
