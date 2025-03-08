@@ -5,8 +5,10 @@ import { navLinks } from "../contstants";
 import { logo, menu, close } from "../assets";
 import {IconMenu2,IconX} from '@tabler/icons-react';
 import { motion, useScroll, useSpring } from 'framer-motion';
+import { useNavContext } from "../context/NavBarContext";
+
 const Navbar = () => {
-  const [active, setActive] = useState("");
+  const {active, setActive} = useNavContext();
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
