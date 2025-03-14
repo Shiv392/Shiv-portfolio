@@ -1,8 +1,8 @@
 /* From Uiverse.io by andrew-demchenk0 */ 
 .pyramid-loader {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 100px;
+  height: 100px;
   display: block;
   transform-style: preserve-3d;
   transform: rotateX(-20deg);
