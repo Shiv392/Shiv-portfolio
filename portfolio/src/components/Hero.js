@@ -33,14 +33,8 @@ const Hero = () => {
 
           <div>
             <h1 className={`${styles.heroHeadText} text-white`}>
-              <Typewriter 
-              words={["Hi, I'm"]} 
-              loop={1} 
-              cursor={false} 
-              typeSpeed={150} 
-              />
+              Hi, I'm
               &nbsp;
-              {showShiv && (
                 <span className="text-[#915EFF]">
                   <Typewriter
                     words={["Shiv Soni"]}
@@ -50,7 +44,6 @@ const Hero = () => {
                     typeSpeed={150}
                   />
                 </span>
-              )}
             </h1>
             <p className={`${styles.heroSubText} mt-2 text-white-100`}>
               <span className="text-[#915EFF]">Software Engineer</span> : Turning Coffee into clean <br className="sm:block hidden" />
