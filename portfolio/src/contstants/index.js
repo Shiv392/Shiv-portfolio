@@ -148,7 +148,7 @@ const technologies = [
 const experiences = [
   {
     title: "Software Developer",
-    company_name: "LeadAngel ",
+    company_name: "Arosys Technologies Pvt Ltd ",
     icon: leadangel,
     iconBg: "#383E56",
     date: "July 2023 - Now",
@@ -158,7 +158,7 @@ const experiences = [
       "Implementing responsive design and ensuring cross-browser compatibility.",
       "Participating in code reviews and providing constructive feedback to other developers.",
     ],
-    link : 'https://www.leadangel.com'
+    link : 'https://www.linkedin.com/company/arosys-technologies-p-ltd/'
   },
   {
     title: "Software Intern",
@@ -172,7 +172,7 @@ const experiences = [
       "Implementing responsive design and ensuring cross-browser compatibility.",
       "Participating in code reviews and providing constructive feedback to other developers.",
     ],
-    link : "https://interbizconsulting.com"
+    link : "https://www.linkedin.com/company/interbiz-consulting-pvt-ltd/"
   }
 ];
 
