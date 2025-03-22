@@ -12,6 +12,7 @@ import { StarsCanvas } from './components';
 import FloatingSocialLinks from './components/SocialLink';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import {NavProvider} from './context/NavBarContext';
+import Footer from './components/Footer.js';
 
 const  App=()=> {
   return (
@@ -32,6 +33,7 @@ const  App=()=> {
      <Contact />
      <StarsCanvas />
      <ScrollToTopButton />
+     <Footer />
      </div>
     </div>
     </NavProvider>
