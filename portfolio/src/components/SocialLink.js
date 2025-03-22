@@ -15,7 +15,7 @@ const FloatingSocialLinks = () => {
        duration: 2,
    }} 
    >
-    <div  className="fixed social-icons right-0 top-1/2 transform -translate-y-1/2 flex flex-col space-y-4 p-2 bg-tertiary rounded-l-lg shadow-lg">
+    <div  className="fixed social-icons right-0 top-1/2 transform -translate-y-1/2 flex flex-col space-y-2 md:space-y-4 p-1 md:p-2 md:hidden sm:hidden bg-tertiary rounded-l-lg shadow-lg w-12 md:w-16 lg:p-2">
       {
         socialLinks.map((item,index)=>(
         <Tooltip key={index} title={item.title} placement='left-start'>
