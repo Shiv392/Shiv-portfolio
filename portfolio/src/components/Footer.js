@@ -3,12 +3,12 @@ import { socialLinks } from '../contstants';
 import { styles } from '../style';
 import '../styles/SocialLink.css';
 import {SectionWrapper} from '../hoc';
+import Divider from '@mui/material/Divider';
 
 export const SociaLink = () => {
     const [link,updateLink]=useState([]);
     useEffect(()=>{
     updateLink([...socialLinks.map(ele=> ele.isDownload==false && ele)]);
-    console.log(link)
     },[])
     return (
         <div className="w-full md:w-1/2 flex flex-col items-center md:items-end">
@@ -28,7 +28,7 @@ export const SociaLink = () => {
 export const LeftIntroduction = () => {
     return (
         <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
-            <p className="text-3xl font-bold">Shiv Soni</p>
+            <p className="text-4xl font-bold">Shiv Soni</p>
             <p className="mt-3 text-sm md:text-base">
                 A Frontend-focused Web Developer building the Frontend of Websites and Web Applications that lead to the success of the overall product.
             </p>
@@ -36,11 +36,26 @@ export const LeftIntroduction = () => {
     );
 };
 
+export const CopyRightSection=()=>{
+    return(
+        <div>
+            <div className=' mt-20'>
+            <Divider sx={{ bgcolor: "white" }} />
+            </div>
+            <div className='text-center mt-5'>
+                <span className='text text-sm'>@Copyright 2025. </span><span className='text text-sm'>Made By <a className='font-bold' href='https://www.linkedin.com/in/Shiv3923' target="_blank">ShivSoni</a></span>
+            </div>
+        </div>
+    )
+}
 const FooterContent=()=>{
     return(
-        <div className='flex items-center justify-around md:flex-nowrap'>
+        <div>
+            <div className='flex items-center justify-around md:flex-nowrap'>
             <LeftIntroduction />
             <SociaLink />
+            </div>
+            <CopyRightSection />
         </div>
     )
 }
