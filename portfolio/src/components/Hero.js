@@ -3,16 +3,10 @@ import { styles } from "../style";
 import { ComputersCanvas } from "./canvas";
 import { Typewriter } from "react-simple-typewriter";
 import { slideIn } from "../utils/motion";
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const Hero = () => {
-  const [showShiv, setShowShiv] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setShowShiv(true);
-    }, 2500); // Delay for "Shiv" to start after 1s
-  }, []);
+  const text = "Shiv Soni".split(" ");
 
   return (
     <section className={`relative w-full h-screen mx-auto`}>
@@ -35,15 +29,21 @@ const Hero = () => {
             <h1 className={`${styles.heroHeadText} text-white`}>
               Hi, I'm
               &nbsp;
-                <span className="text-[#915EFF]">
-                  <Typewriter
-                    words={["Shiv Soni"]}
-                    loop={1}
-                    cursor={false}
-                    cursorStyle="_"
-                    typeSpeed={150}
-                  />
-                </span>
+              <span className="text-[#915EFF]">
+                {text.map((el, i) => (
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{
+                      duration: 0.25,
+                      delay: i / 10
+                    }}
+                    key={i}
+                  >
+                    {el}{" "}
+                  </motion.span>
+                ))}
+              </span>
             </h1>
             <p className={`${styles.heroSubText} mt-2 text-white-100`}>
               <span className="text-[#915EFF]">Software Engineer</span> : Turning Coffee into clean <br className="sm:block hidden" />
