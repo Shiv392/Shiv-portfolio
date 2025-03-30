@@ -43,7 +43,7 @@ export const CopyRightSection=()=>{
             <Divider sx={{ bgcolor: "white" }} />
             </div>
             <div className='text-center mt-5'>
-                <span className='text text-sm'>@Copyright 2025. </span><span className='text text-sm'>Made By <a className='font-bold' href='https://www.linkedin.com/in/Shiv3923' target="_blank">ShivSoni</a></span>
+                <span className='text text-sm text-secondary'>@Copyright 2025. </span><span className='text text-sm'>Made By <a className='font-bold' href='https://www.linkedin.com/in/Shiv3923' target="_blank">ShivSoni</a></span>
             </div>
         </div>
     )
