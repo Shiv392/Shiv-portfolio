@@ -7,23 +7,11 @@ import Skeleton from '@mui/material/Skeleton';
 import Stack from '@mui/material/Stack';
 
 const Tech = () => {
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    // Simulate loading for demonstration (you can adjust based on actual logic)
-    const timer = setTimeout(() => setLoading(false), 1000);
-    return () => clearTimeout(timer);
-  }, []);
   return (
     <div className='flex flex-row flex-wrap justify-center gap-10'>
        {technologies.map((technology) => (
         <div className="w-28 h-28" key={technology.name}>
-          {loading ? (
-            <Stack>
-            <Skeleton variant="circular" sx={{ bgcolor: 'grey' }} className="w-full h-full rounded-full bg-gray-300 animate-pulse" width={100} height={100} />
-            </Stack>
-          ) : (
-            <BallCanvas icon={technology.icon} skill={technology}/>
-          )}
+          <BallCanvas icon={technology.icon} skill={technology}/>
         </div>
       ))}
     </div>
