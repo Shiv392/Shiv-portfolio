@@ -51,7 +51,7 @@ export const CopyRightSection=()=>{
 const FooterContent=()=>{
     return(
         <div>
-            <div className='flex items-center justify-around md:flex-nowrap'>
+            <div className='flex flex-col md:flex-row items-center md:items-start justify-between w-full gap-6 md:gap-12'>
             <LeftIntroduction />
             <SociaLink />
             </div>
@@ -64,7 +64,7 @@ const WrappedLeftIntroduction = SectionWrapper(FooterContent, "");
 
 const Footer = () => {
     return (
-        <footer className="w-full flex items-center justify-around    md:flex-nowrap  bg-black-100 p-6">
+        <footer className="w-full flex items-center justify-around md:flex-nowrap  bg-black-100 p-6">
         <WrappedLeftIntroduction />
         </footer>
     );
