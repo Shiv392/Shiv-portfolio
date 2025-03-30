@@ -10,6 +10,7 @@ import {
 } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
+import BallSkeletonLoader from "../Global/SkeletonLoader";
 
 const Ball = ({ imgUrl, skill }) => {
   const [decal] = useTexture([imgUrl]);
@@ -69,7 +70,7 @@ const Ball = ({ imgUrl, skill }) => {
 const BallCanvas = ({ icon, skill }) => {
   return (
     <Canvas frameloop="demand" dpr={[1, 2]} gl={{ preserveDrawingBuffer: true }}>
-      <Suspense fallback={<CanvasLoader />}>
+      <Suspense fallback={<BallSkeletonLoader />}>
         <OrbitControls enableZoom={true} />
         <Ball imgUrl={icon} skill={skill} />
       </Suspense>
