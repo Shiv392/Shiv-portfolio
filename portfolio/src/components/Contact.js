@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { styles } from "../style";
@@ -10,6 +10,8 @@ import {Field, Form, Formik,ErrorMessage} from 'formik';
 import * as yup from 'yup';
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 
 const ContactFormValidationSchema=yup.object().shape({
   name : yup.string().required('Name is Required').min(2,'Enter a Valid Name').max(30,'Name must be atmost 30 characters long'),
@@ -17,19 +19,24 @@ const ContactFormValidationSchema=yup.object().shape({
   message:yup.string().min(1,'Enter a Valid Message').max(200,'Message must be at most 200 characters long').required('Message is Required')
 })
 const Contact = () => {
-  const [opendialog,setDialog]=useState(false);
-  const [loading, setLoading] = useState(false);
+  const [showBackdrop, setBackdrop] = React.useState(false); //handle backdrop 
+  const [opensnackbar, setSnackbar] = useState(false);  //handle snakback 
+  const [username,setUserName]=useState('');
 
-  const [open, setOpen] = React.useState(false);
+  useEffect(()=>{
+    setSnackbar(false);
+  },[])
+
   const handleClose = () => {
-    setOpen(false);
+    setBackdrop(false);
   };
   const handleOpen = () => {
-    setOpen(true);
+    setBackdrop(true);
   };
 
   const handleSubmit = (values) => {
     handleOpen();
+    setUserName(values.name)
     emailjs
       .send(
         'service_4s9tmna',
@@ -46,20 +53,22 @@ const Contact = () => {
       .then(
         () => {
           handleClose();
-          setDialog(true);
+          setSnackbar(true);
         }
-      ).catch(err=>{
+      )
+      .catch(err => {
         handleClose();
         console.error(err);
         alert("Ahh, something went wrong. Please try again.");
       })
   };
 
-  const ThankyoupageClose=(event)=>{
-    console.log('event--------->',event);
-    setDialog(false);
-    
-  }
+  const handleCloseSnackbar = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setSnackbar(false);
+  };
 
   return (
     <div
@@ -151,20 +160,36 @@ const Contact = () => {
         <EarthCanvas />
       </motion.div>
 
-      
-     <ThankyouPage 
+      {/* <ThankyouPage 
      isOpen={opendialog}
      name={'shivsoni'}
      onClose={ThankyoupageClose}
-     />
+     /> */}
 
-     <Backdrop
+      <Backdrop
         sx={(theme) => ({ color: '#fff', zIndex: theme.zIndex.drawer + 1 })}
-        open={open}
+        open={showBackdrop}
         onClick={handleClose}
       >
         <CircularProgress color="inherit" />
       </Backdrop>
+
+      <Snackbar
+        open={opensnackbar}
+        autoHideDuration={5000}
+        autoFocus={true}
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+        style={{'top':'10%'}}
+      >
+        <Alert
+          onClose={handleCloseSnackbar}
+          severity="success"
+          variant="filled"
+          sx={{ width: '100%' }}
+        >
+          Thankyou {username} for Contacting Me 
+        </Alert>
+      </Snackbar>
     </div>
 
     
